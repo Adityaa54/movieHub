@@ -50,7 +50,7 @@ function MovieDetail() {
 
   return (
     <>
-      <div className="bg-black p-4 text-white">
+      <div className="bg-black min-h-screen p-4 text-white">
         <div className="bg-gray-900 p-4 rounded-md text-white shadow-lg">
           <div className="flex flex-col md:flex-row">
             {/* Left Section with Poster and Movie Details */}

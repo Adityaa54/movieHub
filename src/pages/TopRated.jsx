@@ -28,7 +28,7 @@ function TopRated() {
 
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-10  bg-black">
+      <div className="grid grid-cols-2 min-h-screen md:grid-cols-3 lg:grid-cols-5 gap-6 p-10  bg-black">
        {
         TopRated.map((movie)=>(
             <CardMovie key={movie.id} movie={movie}/>

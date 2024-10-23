@@ -20,7 +20,7 @@ function SearchPage() {
   }, [query]);
   return (
     <>
-      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-10  bg-black">
+      <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-10 min-h-screen bg-black">
         {movies.map((movie) => (
           <CardMovie key={movie.id} movie={movie} />
         ))}
