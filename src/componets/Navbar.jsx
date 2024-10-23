@@ -1,7 +1,18 @@
-import React from 'react';
-import { Link } from 'react-router-dom';
+import React, { useState } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 function Navbar() {
+const[Search , setSearch] = useState("");
+
+const navigate = useNavigate();
+const handleSearch=()=>{
+  const trimsearch = Search.trim();
+  console.log(Search);
+  if (trimsearch) {
+    navigate(`/search?query=${Search}`);
+  }
+}
+
   return (
     <>
       <div className="flex flex-col md:flex-row items-center justify-between border-b border-green-50 bg-black px-6 py-2 md:px-12 space-y-2 md:space-y-0">
@@ -33,9 +44,11 @@ function Navbar() {
             <input
               type="text"
               placeholder="Movie Name"
+              value={Search}
+              onChange={(e)=> setSearch(e.target.value)}
               className="bg-gray-800 text-white text-sm px-3 py-1 rounded w-full md:w-64 focus:outline-none"
             />
-            <button className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700" aria-label="Search Movies">
+            <button onClick={handleSearch} className="bg-blue-600 text-white px-4 py-1 rounded hover:bg-blue-700" aria-label="Search Movies">
               Search
             </button>
           </div>
