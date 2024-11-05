@@ -3,7 +3,7 @@ import CardMovie from '../componets/CardMovie'
 function TopRated() {
 
   const [TopRated, setTopRated] = useState([]);
-
+  const [pageNum, setpageNum] = useState(1);
     useEffect(() => {
       const fetchMovies = async () => {
         try {
@@ -28,14 +28,71 @@ function TopRated() {
 
   return (
     <>
-      <div className="grid grid-cols-2 min-h-screen md:grid-cols-3 lg:grid-cols-5 gap-6 p-10  bg-black">
-       {
-        TopRated.map((movie)=>(
-            <CardMovie key={movie.id} movie={movie}/>
-        ))
-       }
-      </div>
-    </>
+    <div className="min-h-screen bg-black">
+      
+      {TopRated.length > 0 ? (
+        <>
+          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 p-10">
+            {TopRated.slice(pageNum * 10 - 10, pageNum * 10).map((movie) => (
+              <CardMovie key={movie.id} movie={movie} />
+            ))}
+          </div>
+  
+          {/* Pagination */}
+          <div>
+            <div className="flex justify-center items-center gap-3 pb-3">
+             
+              {pageNum > 1 && (
+                <span
+                  onClick={() => {
+                    setpageNum(pageNum - 1);
+                  }}
+                  className={`bg-slate-700 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer`}
+                >
+                  &lt;
+                </span>
+              )}
+  
+             
+              {[...Array(Math.ceil(TopRated.length / 10))].map((_, i) => (
+                <span
+                  key={i}
+                  onClick={() => {
+                    setpageNum(i + 1);
+                  }}
+                  className={`bg-slate-600 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer ${
+                    pageNum === i + 1 ? "bg-blue-300" : "bg-slate-700"
+                  }`}
+                >
+                  {i + 1}
+                </span>
+              ))}
+  
+            
+              {pageNum < Math.ceil(TopRated.length / 10) && (
+                <span
+                  onClick={() => {
+                    setpageNum(pageNum + 1);
+                  }}
+                  className={`bg-slate-700 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer`}
+                >
+                  &gt;
+                </span>
+              )}
+            </div>
+          </div>
+        </>
+      ) : (
+      
+        <div className="flex items-center justify-center min-h-screen text-white">
+          <p>No top-rated movies available</p>
+        </div>
+      )}
+    </div>
+  </>
+  
+
+    
   )
 }
 

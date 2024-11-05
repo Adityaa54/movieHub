@@ -2,7 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 function CardMovie({ movie }) {
-  console.log("helooo world", movie);
+ 
   return (
     <Link to={`/movie/${movie.id}`}>
       <div class="text-center font-semibold text-white">
