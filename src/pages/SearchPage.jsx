@@ -31,7 +31,7 @@ function SearchPage() {
 
       {/* Pagination */}
       <div>
-        <div className="flex justify-center items-center gap-3 pb-3">
+        <div className="flex justify-center items-center gap-3 pb-8">
           
           {pageNum > 1 && (
             <span
