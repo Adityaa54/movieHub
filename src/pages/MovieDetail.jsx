@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 
 function MovieDetail() {
-  const { id } = useParams(); // Get the movie ID from the URL
+  const { id } = useParams(); 
   const [movie, setMovie] = useState(null);
   const [Cast, setCast] = useState([]);
   useEffect(() => {
@@ -46,17 +46,17 @@ function MovieDetail() {
     fetchCast();
   }, []);
 
-  if (!movie) return <div>Loading...</div>; // Show loading message while fetching
+  if (!movie) return <div>Loading...</div>; 
 
   return (
     <>
       <div className="bg-black min-h-screen p-4 text-white">
         <div className="bg-gray-900 p-4 rounded-md text-white shadow-lg">
           <div className="flex flex-col md:flex-row">
-            {/* Left Section with Poster and Movie Details */}
+           
             <div className="md:w-1/2">
               <div className="flex">
-                {/* Poster Section */}
+                
                 <div className="w-1/3">
                   <img
                     src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`}
@@ -65,7 +65,7 @@ function MovieDetail() {
                   />
                 </div>
 
-                {/* Movie Details Section */}
+              
                 <div className="w-2/3 pl-4 text-base font-mono">
                   <p className="mb-2 text-sm sm:text-2xl md:text-3xl font-bold">
                     {movie.title}
@@ -87,14 +87,13 @@ function MovieDetail() {
                 </div>
               </div>
 
-              {/* Overview Section */}
               <div className="font-serif text-lg mt-4">
                 <h2 className="text-xl font-semibold">Overview</h2>
                 <p className="text-sm">{movie.overview}</p>
               </div>
             </div>
 
-            {/* Right Section with Backdrop Image */}
+           
             <div className="md:w-1/2 mt-4 md:mt-0 md:pl-4 flex items-center justify-center">
               <img
                 src={`https://image.tmdb.org/t/p/w500${movie.backdrop_path}`}

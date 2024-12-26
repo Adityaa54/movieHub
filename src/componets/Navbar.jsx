@@ -16,7 +16,7 @@ const handleSearch=()=>{
   return (
     <>
       <div className="flex flex-col md:flex-row items-center justify-between border-b border-green-50 bg-black px-6 py-2 md:px-12 space-y-2 md:space-y-0">
-        {/* Logo */}
+    
         <div className="flex items-center space-x-2">
           <div className="w-12 h-12 sm:w-16 sm:h-16">
             <img
@@ -30,16 +30,15 @@ const handleSearch=()=>{
           </div>
         </div>
 
-        {/* Links and Search Bar */}
+       
         <div className="flex flex-col md:flex-row items-center space-y-2 md:space-y-0 md:space-x-4 w-full md:w-auto">
-          {/* Links */}
+         
           <div className="flex justify-center space-x-4">
             <Link to="/" className="text-white hover:text-pink-600">Popular</Link>
             <Link to="/toprated" className="text-white hover:text-pink-600">Top Rated</Link>
             <Link to="/upcoming" className="text-white hover:text-pink-600">Upcoming</Link>
           </div>
 
-          {/* Search Bar */}
           <div className="flex items-center space-x-2 w-full justify-center md:w-auto">
             <input
               type="text"

@@ -9,9 +9,9 @@ function CardMovie({ movie }) {
         <div class="aspect-[2/3] bg-gray-500 rounded-lg">
           {movie.poster_path ? (
             <img
-              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} // Constructing the image URL
-              alt={movie.title} // Alt text for accessibility
-              className="rounded-lg h-full w-full object-cover" // Ensures the image fits the container
+              src={`https://image.tmdb.org/t/p/w500${movie.poster_path}`} 
+              alt={movie.title} 
+              className="rounded-lg h-full w-full object-cover" 
             />
           ) : (
             <div className="h-full bg-gray-600 rounded-lg flex items-center justify-center">

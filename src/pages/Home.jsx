@@ -37,7 +37,7 @@ function Home() {
               ))}
             </div>
 
-            {/* Pagination */}
+            {/* Pagination gdfsgdgdsg */}
             <div>
               <div className="flex justify-center items-center gap-3 pb-8">
                 {pageNum > 1 && (
@@ -45,7 +45,7 @@ function Home() {
                     onClick={() => setpageNum(pageNum - 1)}
                     className="bg-slate-700 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer"
                   >
-                    &lt;
+                    
                   </span>
                 )}
 
@@ -56,7 +56,7 @@ function Home() {
                     onClick={() => setpageNum(pageNum + 1)}
                     className="bg-slate-700 w-10 h-10 flex items-center justify-center rounded-full cursor-pointer"
                   >
-                    &gt;
+                    
                   </span>
                 )}
               </div>
